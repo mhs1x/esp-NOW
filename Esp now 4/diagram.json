@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "author": "Marcus",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "builder": "esp-idf" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 150,
+      "left": -100,
+      "attrs": { "color": "green", "label": "B1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 150,
+      "left": 0,
+      "attrs": { "color": "green", "label": "B2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 150,
+      "left": 100,
+      "attrs": { "color": "green", "label": "B3" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 150,
+      "left": 200,
+      "attrs": { "color": "green", "label": "B4" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -100,
+      "left": 50,
+      "attrs": { "color": "red", "label": "Ligado" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -100,
+      "left": 150,
+      "attrs": { "color": "blue", "label": "Link" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": -100, "left": -50, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:GND.1", "btn1:1.l", "black", [] ],
+    [ "esp:16", "btn1:2.r", "green", [] ],
+    [ "esp:GND.1", "btn2:1.l", "black", [] ],
+    [ "esp:17", "btn2:2.r", "green", [] ],
+    [ "esp:GND.1", "btn3:1.l", "black", [] ],
+    [ "esp:18", "btn3:2.r", "green", [] ],
+    [ "esp:GND.1", "btn4:1.l", "black", [] ],
+    [ "esp:19", "btn4:2.r", "green", [] ],
+    [ "esp:2", "led1:A", "red", [] ],
+    [ "esp:GND.1", "led1:C", "black", [] ],
+    [ "esp:4", "led2:A", "blue", [] ],
+    [ "esp:GND.1", "led2:C", "black", [] ],
+    [ "esp:5", "bz1:1", "purple", [] ],
+    [ "esp:GND.1", "bz1:2", "black", [] ],
+    [ "esp:D13", "btn1:2.r", "green", [ "h-33.8", "v42.9" ] ],
+    [ "esp:D12", "btn2:2.r", "green", [ "h62.2", "v4" ] ],
+    [ "esp:D14", "btn3:2.r", "green", [ "h-14.6", "v91.2", "h182.4" ] ],
+    [ "esp:D27", "btn4:2.r", "green", [ "h-24.2", "v119.6", "h288" ] ],
+    [ "esp:D2", "led1:A", "green", [ "h0" ] ],
+    [ "esp:D5", "bz1:1", "green", [ "h0" ] ],
+    [ "led2:A", "esp:D18", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
